@@ -1,11 +1,13 @@
 import random
 
 ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
-
+suits = ['♠', '♥', '♦', '♣']
 deck = []
+
 for suit in suits:
     for rank in ranks:
-        deck.append(rank)
+        card = rank + suit
+        deck.append(card)
 
 def calculate_hand_value(hand):
     value = 0
@@ -37,11 +39,11 @@ player_hand = [deal_card(), deal_card()]
 dealer_hand = [deal_card()]
 
 while True:
-    print("Player's Hand:", player_hand, "Value:", calculate_hand_value(player_hand))
-    print("Dealer's Hand:", [dealer_hand[0], '???'])
+    print("Player:", player_hand, "Value:", calculate_hand_value(player_hand))
+    print("Dealer:", [dealer_hand[0], '???'])
 
     if calculate_hand_value(player_hand) == 21 and calculate_hand_value(dealer_hand) == 21:
-        print("Push! Both player and dealer have blackjack.")
+        print("Push!")
         break
     elif calculate_hand_value(player_hand) == 21:
         print("Player wins with blackjack!")
@@ -50,7 +52,7 @@ while True:
         print("Dealer wins with blackjack!")
         break
 
-    action = input("Do you want to (h)it or (s)tand? ")
+    action = input("hit or stand? (h/s) ")
 
     if action.lower() == 'h':
         player_hand.append(deal_card())
@@ -62,8 +64,9 @@ while True:
     elif action.lower() == 's':
         while calculate_hand_value(dealer_hand) < 17:
             dealer_hand.append(deal_card())
+            print("Dealer's Hand:", dealer_hand)
 
-        print("Dealer's Hand:", dealer_hand, "Value:", calculate_hand_value(dealer_hand))
+        print("Dealer's Hand:", dealer_hand)
 
         if calculate_hand_value(dealer_hand) > 21:
             print("Dealer busts! Player wins.")
