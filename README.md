@@ -1,7 +1,2 @@
-Hi my name is Jake Khal. I've added projects I've done for college courses as well as some I have done out of interest.
-
-Classes I have taken at University of Oregon:
-
-CS 210, 211, 212 (Intro to Computer Science)
-CS 314 (Computer Organization)
-CS 330 (C/C++ and Unix)
+Hello, my name is Jake Khal. I'm currently working towards a Bachelor’s degree in Computer Science, with a focus in Cybersecurity.
+I've added projects I've done for college courses as well as some I have done out of interest.
